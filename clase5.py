@@ -27,10 +27,10 @@ def crearbot():
             file.close()
             break
         
-    namechatbot=proyecto+'.py'
+    namechatbot= './'+proyecto+'/'+proyecto+'.py'
     file=open(namechatbot,"w")
-    file.write("from chatterbot import CHatBot\nfrom chatterbot.trainers import ListTrainer\nimport os\nbot=ChatBot('"+proyecto+"')\ntrainer=ListTrainer(bot)\n"+ os.linesep)
-    file.write("for files in os.listdir('./"+proyecto+")'): \n    data=open('./"+proyecto+"/'+files,'r').readlines()\n trainer.train(data)\n    trainer.train(data)\n    trainer.train(data)\n"+ os.linesep)
+    file.write("from chatterbot import ChatBot\nfrom chatterbot.trainers import ListTrainer\nimport os\nbot=ChatBot('"+proyecto+"')\ntrainer=ListTrainer(bot)\n"+ os.linesep)
+    file.write("for files in os.listdir('./"+proyecto+"/'): \n    data=open('./"+proyecto+"/'+files,'r').readlines()\n trainer.train(data)\n    trainer.train(data)\n    trainer.train(data)\n"+ os.linesep)
     file.close()
 
 crearbot()
